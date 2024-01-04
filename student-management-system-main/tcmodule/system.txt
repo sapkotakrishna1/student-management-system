@@ -1,0 +1,17 @@
+class create sql
+CREATE TABLE classone( id INT PRIMARY KEY AUTO_INCREMENT, reg_no INT UNIQUE NOT NULL, roll INT UNIQUE NOT NULL, 
+fullname VARCHAR(50) NOT NULL, address VARCHAR(50) NOT NULL, gender VARCHAR(50) NOT NULL, 
+class TEXT NOT NULL, section TEXT NOT NULL );
+
+notice create sql
+CREATE TABLE notice (id INT AUTO_INCREMENT PRIMARY KEY, teacher VARCHAR(50), class VARCHAR(50),
+title VARCHAR(50), message TEXT, file_path VARCHAR(255), date DATE DEFAULT CURRENT_DATE, expiry_date DATE);
+
+homework create sql
+CREATE TABLE homework ( id INT AUTO_INCREMENT PRIMARY KEY, class VARCHAR(50), teacher VARCHAR(50), 
+title VARCHAR(255), description TEXT, date_assigned DATE DEFAULT CURRENT_DATE, file BLOB, due_date DATE );
+
+request create sql
+CREATE TABLE request( id INT PRIMARY KEY AUTO_INCREMENT, student VARCHAR(100), class VARCHAR(50), 
+section VARCHAR(50), fullname VARCHAR(100),address VARCHAR(100), email VARCHAR(50) UNIQUE, 
+password VARCHAR(250), status VARCHAR(50) );
