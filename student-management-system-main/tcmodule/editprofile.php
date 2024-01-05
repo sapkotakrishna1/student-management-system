@@ -13,10 +13,10 @@ $email = $_SESSION['email'];
 
 // Fetch user data from the database using the email
 $select_query = "SELECT * FROM log_teacher WHERE email = ?";
-$stmt = mysqli_prepare($con, $select_query);
-mysqli_stmt_bind_param($stmt, "s", $email);
-mysqli_stmt_execute($stmt);
-$result = mysqli_stmt_get_result($stmt);
+$select_stmt = mysqli_prepare($con, $select_query);
+mysqli_stmt_bind_param($select_stmt, "s", $email);
+mysqli_stmt_execute($select_stmt);
+$result = mysqli_stmt_get_result($select_stmt);
 
 if ($result && $row = mysqli_fetch_assoc($result)) {
     // User data found, proceed with form submission
@@ -27,18 +27,23 @@ if ($result && $row = mysqli_fetch_assoc($result)) {
         $newpass = $_POST['newpassword'];
         $repass = $_POST['repassword'];
 
+        // Fetch stored password from the database
+        $storedPassword = $row['password'];
+
+        // Check if the stored password is hashed
+        $isStoredPasswordHashed = (strlen($storedPassword) > 30); // Change the threshold as needed
+
         // Validate old password
-        if (password_verify($password, $row['password'])) {
+        if (($isStoredPasswordHashed && password_verify($password, $storedPassword)) || (!$isStoredPasswordHashed && $password === $storedPassword)) {
             // Old password is correct, proceed with the update
             $hashedNewPass = password_hash($newpass, PASSWORD_DEFAULT);
 
             // Update the user's profile
             $update_query = "UPDATE log_teacher SET name = ?, email = ?, password = ? WHERE email = ?";
-            $stmt = mysqli_prepare($con, $update_query);
+            $update_stmt = mysqli_prepare($con, $update_query);
 
-            // Adjusted the number of placeholders to match the query
-            mysqli_stmt_bind_param($stmt, "ssss", $name, $newEmail, $hashedNewPass, $email);
-            $update_result = mysqli_stmt_execute($stmt);
+            mysqli_stmt_bind_param($update_stmt, "ssss", $name, $newEmail, $hashedNewPass, $email);
+            $update_result = mysqli_stmt_execute($update_stmt);
 
             if ($update_result) {
                 // Update the email in the session after a successful update
@@ -49,6 +54,9 @@ if ($result && $row = mysqli_fetch_assoc($result)) {
                 echo "<script>alert('Error occurred while updating profile');</script>";
                 header('location: index.php');
             }
+
+            // Close the update statement after execution
+            mysqli_stmt_close($update_stmt);
         } else {
             // Old password is incorrect
             echo "<script>alert('Old Password Mismatch');</script>";
@@ -59,7 +67,10 @@ if ($result && $row = mysqli_fetch_assoc($result)) {
     echo "<script>alert('User not found');</script>";
 }
 
-mysqli_stmt_close($stmt);
+// Close the select statement after usage
+mysqli_stmt_close($select_stmt);
+
+// Close the database connection
 mysqli_close($con);
 ?>
 
