@@ -1,0 +1,219 @@
+
+#text{
+    height: 15px;
+    border-radius: 5px;
+    padding: 4px;
+    border: solid thin black;
+    width: 100%;
+}
+
+
+#button{
+
+    padding: 10px;
+    width: 100px;
+    color: rgb(12, 11, 11);
+    background-color: rgb(212, 223, 226);
+    border: 1px solid black;
+}   
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+  }
+  
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+  }
+
+/* 
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+ body{
+    background-color:#ccc;
+    background-image: url(../sms1.avif);
+ }
+
+nav{
+   position: absolute;
+   top: 0px;
+   width: 1286px;	
+   background-color: rgb(158, 168, 177);
+   padding: 30px;
+
+  }
+
+  #logout{
+   position: absolute;
+   top: 20px;
+   left: 1220px;
+   color: rgb(56, 52, 52);
+   font-weight: bold;
+   border: 1px solid black;
+   border-radius: 10px;
+   padding: 5px;
+  }
+
+  .container{
+    position: absolute;
+    padding: 15px;
+    top: 60px;
+    width: 1316px;
+    background-color: rgba(107, 185, 175, 0.863);
+}
+
+.leftbar{
+    position: absolute;
+    top: 180px;
+    left: 150px;
+    width: 5%;
+    height: 100%;
+    border: 1px solid white;
+    padding-left: 200px;
+    padding-bottom: 100px;
+    background-color: rgba(194, 140, 167, 0.699);
+    border-radius: 20px;	
+}
+
+p{
+   position: absolute;
+   top: 15px;
+   left: 40px;
+   color: rgb(56, 52, 52);
+   padding: px;
+   font-weight: bold;
+   font-size: 24px;
+}
+
+div p{
+    position: absolute;
+    top: 80px;
+    left: 75px;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    
+}
+
+a{
+ text-decoration: none;
+}	  
+
+a:hover{
+    border-radius: 10px; 
+    color: black;
+} 
+#logout:hover{
+    background-color: azure;
+}
+
+div span{
+    position: absolute;
+    top: 130px;
+    left: 75px;
+    font-size: 24px;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px;
+}
+#stud{
+    position: absolute;
+    top: 88px;
+    left: 45px;
+    font-size: 24px;
+}
+#crown{
+    position: absolute;
+    top: 138px;
+    left: 45px;
+    font-size: 24px;
+} */
+
+/* 
+<style>
+body{
+    background-image: url(sms.jpg);
+    background-size: cover;
+}
+
+#box{
+     position: sticky;
+     top: 15%;
+     left: 40%;
+     background-color: white;
+     border: 1px solid black;
+     border-radius: 10px;
+     margin: auto;
+     width: 300px;
+     padding: 20px;
+     background-image: url(sms6.jpg);
+     background-size: cover;
+}
+ #role{
+    width: 310px;
+    height: 35px;
+}
+#signup{
+    text-decoration: none;
+    background-color: #ccc;
+    border-radius: 10px;
+}
+#signup:hover{
+    color: black;
+    font-weight: bold;
+}
+
+#button{
+    width: 310px;
+    height: 35px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+#text{
+    width: 300px;
+    height: 30px; 
+}
+</style> */
+
+
+
+
+
+
+
+
+
+
